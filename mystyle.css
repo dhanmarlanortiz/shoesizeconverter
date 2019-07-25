@@ -1,0 +1,34 @@
+.size-cm {
+     display: none;
+}
+.table {
+     margin-bottom: 0;
+}
+.table td, .table th {
+     width: 25%;
+     padding-left: 5%;
+     padding-right: 5%;
+     /* text-align: center; */
+}
+.table tr:nth-child(2n+3) td {
+
+}
+#category-dropdown {
+     display: none;
+}
+#category-dropdown.show {
+     display: block;
+}
+.converter-outer {
+
+}
+.converter-outer > div[class^="col-"]{
+
+}
+.converter-inner {
+     margin: 0 -2px;
+}
+
+.converter-inner > div[class^="col-"]{
+     padding: 0 2px;
+}
