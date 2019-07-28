@@ -1,5 +1,5 @@
 function convertSize(value_one, unit_one, value_two, unit_two, category) {
-	console.log(category+": "+value_one+unit_one+", "+value_two+unit_two);     
+	// console.log(category+": "+value_one+unit_one+", "+value_two+unit_two);     
 }
 
 $(document).ready(function() {
@@ -56,6 +56,21 @@ $(document).ready(function() {
 			category = $('#category-dropdown > a.active > span').text();
 		
 		convertSize(value_one, unit_one, value_two, unit_two, category);
+	});
+
+	
+	$('#size-one-unit').on('change', function() {
+		var unit_one = $('#size-one-unit');
+		var unit_two = $('#size-two-unit');	
+		unit_two.find('option').removeClass('hidden');
+		unit_two.find('option[value="' + unit_one.val() + '"]').addClass('hidden');
+	});
+
+	$('#size-two-unit').on('change', function() {
+		var unit_one = $('#size-one-unit');
+		var unit_two = $('#size-two-unit');	
+		unit_one.find('option').removeClass('hidden');
+		unit_one.find('option[value="' + unit_two.val() + '"]').addClass('hidden');
 	});
 
 });
