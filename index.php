@@ -1,29 +1,12 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-     <!-- 
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     -->
-
-     <link rel="stylesheet" href="bootstrap.min.css">
-     <link rel="stylesheet" href="mystyle.css">
-
-     <title>Shoe Size Converter</title>
-</head>
-
-<body>
+<?php include("header.php"); ?>
      <div class="container">
 
-          <!-- <div class="row">
+          <div class="row">
                <div class="col-12">
                     <h1 class="display-4">Shoe Size Charts and Converter</h1>
                     <hr>
                </div>
-          </div> -->
+          </div>
 
           <br>
 
@@ -69,7 +52,7 @@
                </div>
                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="input-group converter-inner size-one">
-                         <input id="size-one-value" type="number" name="" value="" class="form-control">
+                         <input id="size-one-value" type="text" name="" value="" class="form-control">
                          <div class="input-group-append">
                               <select id="size-one-unit" name="" class="form-control">
                                    <option value="US" selected>US</option>
@@ -81,7 +64,7 @@
                </div>
                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="input-group converter-inner size-one">
-                         <input id="size-two-value" type="number" name="" value="" class="form-control">
+                         <input id="size-two-value" type="text" name="" value="" class="form-control">
                          <div class="input-group-append">
                               <select id="size-two-unit" name="" class="form-control">
                                    <option value="EU" selected>EU</option>
@@ -92,15 +75,14 @@
                     </div>
                </div>
           </div>
-
           <br>
 
           <!-- CHARTS -->
           <div class="row">
-               <div class="col-12">
+               <div class="col-12 col-sm-12 col-lg-12">
                     <h5>Size Chart</h5>
                </div>
-               <div class="col-12">
+               <div class="col-12 col-sm-12 col-lg-4">
                     <table class="table">
                          <thead class="thead-dark">
                               <tr>
@@ -108,7 +90,7 @@
                                    <th scope="col">EU</th>
                                    <th scope="col">UK</th>
                                    <th scope="col" colspan="2">
-                                        <select class="length-unit"  id="" aria-label="">
+                                        <select class="length-unit" id="" aria-label="">
                                              <option class="unit-in" value="in" selected>in</option>
                                              <option class="unit-cm" value="cm">cm</option>
                                         </select>
@@ -116,7 +98,7 @@
                               </tr>
                          </thead>
                     </table>
-                    <div class="tab-content" id="">
+                    <div class="tab-content" id="charts">
                          <div class="tab-pane fade show active" id="mens-content" role="tabpanel" aria-labelledby="mens-tab">
                               <table class="table table-sm table-striped" id="Mens">
                                    <tbody>
@@ -679,16 +661,4 @@
           <hr>
      </div>
 
-     <!--
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-     -->
-     <script src="jquery-3.3.1.slim.min.js"></script>
-     <script src="popper.min.js"></script>
-     <script src="bootstrap.min.js"></script>
-
-     <script src="myscript.js" type="text/javascript"></script>
-</body>
-
-</html>
+     <?php include("footer.php"); ?>
