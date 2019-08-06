@@ -1,9 +1,10 @@
-function convertSize(value_one, unit_one, value_two, unit_two, category) {
+ function convertSize(value_one, unit_one, value_two, unit_two, category) {
 	// console.log(category+": "+value_one+unit_one+", "+value_two+unit_two);
 }
 
 $(document).ready(function() {
 
+	/* round-off inches */
 	$(".tab-content .table").each(function() {
 		$(this).find('tr').each(function() {
 			$(this).find('.size-in').text(
@@ -14,6 +15,7 @@ $(document).ready(function() {
 		});
 	});
 
+	/* toggle cm/inch row */
 	$(".length-unit").on("change", function() {
 		var unit = $(".length-unit").val();
 		if(unit == "cm") {
@@ -33,81 +35,79 @@ $(document).ready(function() {
 		}
 	});
 
+	/* update category dropdown text */
 	$("#category-dropdown .dropdown-item").on("click", function() {
 		var active_item = $(this).find('> span').text();
 		$("#category-toggle .selected-category").text(active_item);
+          resetConverter();
 	});
 
-	$('#category-dropdown .dropdown-item').on('click', function() {
-		var value_one = $('#size-one-value').val(),
-			unit_one = $('#size-one-unit').val(),
-			value_two = $('#size-two-value').val(),
-			unit_two = $('#size-two-unit').val(),
-			category = $(this).find('> span').text();
+     $('#input-value').on('change', function() {
+          $("#input-value").removeClass('error');
+     });
 
-		convertSize(value_one, unit_one, value_two, unit_two, category);
+	$('#input-unit').on('change', function() {
+          var input_unit = $("#input-unit").val();
+          var input_value = $("#input-value");
+
+          input_value.prop('disabled', false);
+          $("#input-unit").removeClass('error');
+
+          if(input_unit != null) {
+               var size_options = "<option value='null' selected disabled>Size</option>";
+               input_value.find("option").remove();
+               $("#charts .tab-pane.active table tbody tr").each( function() {
+                    var sizes = $(this).find("td:nth-child("+input_unit+")").text();
+                    var option = "<option value='" + sizes + "'>" + sizes + "</option>";
+                    size_options += option;
+     		});
+               input_value.append(size_options);
+          } else {
+               input_value.prop('disabled', true);
+               input_value.find('option:first-child').prop('selected', true);
+          }
 	});
 
-	$('#size-one-value, #size-one-unit, #size-two-value, #size-two-unit').on('change', function() {
-		var value_one = $('#size-one-value').val(),
-			unit_one = $('#size-one-unit').val(),
-			value_two = $('#size-two-value').val(),
-			unit_two = $('#size-two-unit').val(),
-			category = $('#category-dropdown > a.active > span').text();
+     $('#convert').on('click', function() {
+          var input_unit = $("#input-unit");
+          var input_value = $("#input-value");
 
-		convertSize(value_one, unit_one, value_two, unit_two, category);
+          if(input_unit.val() == null) {
+               input_unit.addClass('error');
+          }else {
+               input_unit.removeClass('error');
+          }
+
+          if(input_value.val() == null) {
+               input_value.addClass('error');
+          }else {
+               input_value.removeClass('error');
+          }
+
+          if((input_unit.val() != null) && (input_value.val() != null )) {
+               $("#charts .tab-pane.active table tbody tr").each( function() {
+                    var match_case = $(this).find("td:nth-child(" + input_unit.val() + ")").text()
+                    if(match_case == input_value.val()) {
+                         var us = $(this).find("td:nth-child(1)").text()
+                         var eu = $(this).find("td:nth-child(2)").text()
+                         var uk = $(this).find("td:nth-child(3)").text()
+                         $("#result-us").text(us);
+                         $("#result-eu").text(eu);
+                         $("#result-uk").text(uk);
+                         $(".results").removeClass('hidden');
+                    }
+     		});
+          }
 	});
 
+     function resetConverter() {
+          $(".results").addClass('hidden');
+          $("#input-unit").find("option:first-child").prop("selected", true);
+          $("#input-value").find("option:first-child").prop("selected", true);
+          $("#input-value").prop("disabled", true);
+     }
 
-	$('#size-one-unit').on('change', function() {
-		var unit_one = $('#size-one-unit');
-		var unit_two = $('#size-two-unit');
-		unit_two.find('option').removeClass('hidden');
-		unit_two.find('option[value="' + unit_one.val() + '"]').addClass('hidden');
-	});
-
-	$('#size-two-unit').on('change', function() {
-		var unit_one = $('#size-one-unit');
-		var unit_two = $('#size-two-unit');
-		unit_one.find('option').removeClass('hidden');
-		unit_one.find('option[value="' + unit_two.val() + '"]').addClass('hidden');
-	});
-
-	$('#size-one-value').on('change', function() {
-		var input_val = $("#size-one-value").val();
-		var input_unit = $("#size-one-unit").val();
-		var output_unit = $("#size-two-unit").val();
-		var output_val = "";
-
-		var search_col = "";
-		if(input_unit == "US") {
-			search_col = "td:nth-child(1)";
-		}else if(input_unit == "EU") {
-			search_col = "td:nth-child(2)";
-		}else if(input_unit == "UK") {
-			search_col = "td:nth-child(3)";
-		}
-
-		var result_col = "";
-		if(output_unit == "US") {
-			result_col = "td:nth-child(1)";
-		}else if(output_unit == "EU") {
-			result_col = "td:nth-child(2)";
-		}else if(output_unit == "UK") {
-			result_col = "td:nth-child(3)";
-		}
-
-		$("#charts .tab-pane.active table tbody tr").each( function() {
-			var i = $(this).find(search_col).text();
-
-			if(input_val == i) {
-				output_val = $(this).find(result_col).text();
-				$("#size-two-value").val(output_val);
-			}
-		});
-
-
-	});
-
-
+     // $("#input-unit, #input-value").dropkick({
+     //      mobile: true
+     // });
 });

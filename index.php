@@ -3,7 +3,7 @@
 
           <div class="row">
                <div class="col-12">
-                    <h1 class="display-4">Shoe Size Charts and Converter</h1>
+                    <!-- <h1 class="display-4">Shoe Size Charts and Converter</h1> -->
                     <hr>
                </div>
           </div>
@@ -11,7 +11,7 @@
           <br>
 
           <div class="row">
-               <div class="col-12">
+               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
                     <div class="dropdown">
                          <button class="btn btn-secondary dropdown-toggle" type="button" id="category-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Category: <span class="selected-category">Mens</span>
@@ -46,54 +46,77 @@
           </div>
 
           <!-- CONVERTER -->
-          <div class="row converter-outer">
-               <div class="col-12">
-                    <h5>Size Converter</h5>
+          <div class="row converter">
+               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
+                    <h5>Converter</h5>
                </div>
-               <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="input-group converter-inner size-one">
-                         <input id="size-one-value" type="text" name="" value="" class="form-control">
-                         <div class="input-group-append">
-                              <select id="size-one-unit" name="" class="form-control">
-                                   <option value="US" selected>US</option>
-                                   <option value="EU" class="hidden">EU</option>
-                                   <option value="UK">UK</option>
-                              </select>
-                         </div>
-                    </div>
+               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
+                    <h6>Input: </h6>
                </div>
-               <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <div class="input-group converter-inner size-one">
-                         <input id="size-two-value" type="text" name="" value="" class="form-control">
-                         <div class="input-group-append">
-                              <select id="size-two-unit" name="" class="form-control">
-                                   <option value="EU" selected>EU</option>
-                                   <option value="UK">UK</option>
-                                   <option value="US" class="hidden">US</option>
-                              </select>
-                         </div>
-                    </div>
+               <div class="col-5 col-sm-4 col-md-3 col-lg-2 offset-lg-3">
+                    <select id="input-unit" name="" class="form-control">
+                         <option value="null" selected disabled>Unit</option>
+                         <option value="1">US</option>
+                         <option value="2">EU</option>
+                         <option value="3">UK</option>
+                    </select>
+               </div>
+               <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+                    <select id="input-value" name="" class="form-control" disabled>
+                         <option value="null" selected disabled>Size</option>
+                    </select>
+               </div>
+               <div class="col-2 col-sm-4 col-md-3 col-lg-2">
+                    <button id="convert" class="btn btn-primary btn-block">
+                         Go
+                    </button>
                </div>
           </div>
+          <div class="row results hidden">
+               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
+                    <br>
+                    <h6>Results: </h6>
+               </div>
+               <div class="col-5 col-sm-4 col-md-3 col-lg-2 offset-lg-3">
+                    <label for="result-us">US:</label>
+                    <span id="result-us"></span>
+               </div>
+               <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+                    <label for="result-eu">EU:</label>
+                    <span id="result-eu"></span>
+               </div>
+               <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+                    <label for="result-uk">UK:</label>
+                    <span id="result-uk"></span>
+               </div>
+          </div>
+
           <br>
 
           <!-- CHARTS -->
           <div class="row">
-               <div class="col-12 col-sm-12 col-lg-12">
-                    <h5>Size Chart</h5>
+               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
+                    <h5 class="chart-title">CHART</h5>
                </div>
-               <div class="col-12 col-sm-12 col-lg-4">
+               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
                     <table class="table">
                          <thead class="thead-dark">
                               <tr>
-                                   <th scope="col">US</th>
-                                   <th scope="col">EU</th>
-                                   <th scope="col">UK</th>
+                                   <th scope="col">
+                                        US <i class="fas fa-caret-down fa-lg"></i>
+                                   </th>
+                                   <th scope="col">
+                                        EU <i class="fas fa-caret-down fa-lg"></i>
+                                   </th>
+                                   <th scope="col">
+                                        UK <i class="fas fa-caret-down fa-lg"></i>
+                                   </th>
                                    <th scope="col" colspan="2">
                                         <select class="length-unit" id="" aria-label="">
                                              <option class="unit-in" value="in" selected>in</option>
                                              <option class="unit-cm" value="cm">cm</option>
                                         </select>
+                                        <i class="fas fa-caret-down fa-lg"></i>
                                    </th>
                               </tr>
                          </thead>
@@ -659,6 +682,7 @@
 
           <br>
           <hr>
+
      </div>
 
      <?php include("footer.php"); ?>

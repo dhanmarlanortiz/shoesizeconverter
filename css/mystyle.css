@@ -1,38 +1,140 @@
+@font-face {
+  font-family: Antonio-Bold;
+  src: url(../fonts/Antonio-Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: Antonio-Light;
+  src: url(../fonts/Antonio-Light.ttf);
+  font-weight: light;
+}
+@font-face {
+  font-family: Antonio-Regular;
+  src: url(../fonts/Antonio-Regular.ttf);
+  font-weight: regular;
+}
+
+.gradient-bg {
+     background: rgb(206,230,254); /* Old browsers */
+
+background: -webkit-linear-gradient(rgba(206,230,254,1) 0%, rgba(204,228,252,1) 0%, rgba(203,227,255,1) 4%, rgba(201,227,252,1) 5%, rgba(200,225,255,1) 8%, rgba(200,226,253,1) 8%, rgba(201,224,255,1) 9%, rgba(196,221,252,1) 14%, rgba(197,217,254,1) 20%, rgba(194,216,253,1) 21%, rgba(194,213,253,1) 26%, rgba(197,212,253,1) 27%, rgba(195,213,253,1) 27%, rgba(198,211,253,1) 28%, rgba(198,209,254,1) 31%, rgba(222,199,253,1) 43%, rgba(224,197,252,1) 47%, rgba(224,193,250,1) 48%, rgba(227,194,251,1) 50%, rgba(223,189,250,1) 54%, rgba(218,187,247,1) 55%, rgba(214,185,249,1) 57%, rgba(213,185,246,1) 57%, rgba(213,185,246,1) 57%, rgba(205,183,247,1) 59%, rgba(195,180,245,1) 62%, rgba(168,173,241,1) 67%, rgba(164,171,239,1) 67%, rgba(163,172,241,1) 68%, rgba(157,170,238,1) 69%, rgba(155,170,239,1) 69%, rgba(152,169,238,1) 70%, rgba(133,163,235,1) 74%, rgba(110,154,225,1) 79%, rgba(102,150,224,1) 82%, rgba(100,150,221,1) 82%, rgba(93,147,221,1) 84%, rgba(79,141,214,1) 87%, rgba(79,141,216,1) 88%, rgba(78,140,213,1) 88%, rgba(30,118,192,1) 100%);
+background: -o-linear-gradient(rgba(206,230,254,1) 0%, rgba(204,228,252,1) 0%, rgba(203,227,255,1) 4%, rgba(201,227,252,1) 5%, rgba(200,225,255,1) 8%, rgba(200,226,253,1) 8%, rgba(201,224,255,1) 9%, rgba(196,221,252,1) 14%, rgba(197,217,254,1) 20%, rgba(194,216,253,1) 21%, rgba(194,213,253,1) 26%, rgba(197,212,253,1) 27%, rgba(195,213,253,1) 27%, rgba(198,211,253,1) 28%, rgba(198,209,254,1) 31%, rgba(222,199,253,1) 43%, rgba(224,197,252,1) 47%, rgba(224,193,250,1) 48%, rgba(227,194,251,1) 50%, rgba(223,189,250,1) 54%, rgba(218,187,247,1) 55%, rgba(214,185,249,1) 57%, rgba(213,185,246,1) 57%, rgba(213,185,246,1) 57%, rgba(205,183,247,1) 59%, rgba(195,180,245,1) 62%, rgba(168,173,241,1) 67%, rgba(164,171,239,1) 67%, rgba(163,172,241,1) 68%, rgba(157,170,238,1) 69%, rgba(155,170,239,1) 69%, rgba(152,169,238,1) 70%, rgba(133,163,235,1) 74%, rgba(110,154,225,1) 79%, rgba(102,150,224,1) 82%, rgba(100,150,221,1) 82%, rgba(93,147,221,1) 84%, rgba(79,141,214,1) 87%, rgba(79,141,216,1) 88%, rgba(78,140,213,1) 88%, rgba(30,118,192,1) 100%);
+background: linear-gradient(rgba(206,230,254,1) 0%, rgba(204,228,252,1) 0%, rgba(203,227,255,1) 4%, rgba(201,227,252,1) 5%, rgba(200,225,255,1) 8%, rgba(200,226,253,1) 8%, rgba(201,224,255,1) 9%, rgba(196,221,252,1) 14%, rgba(197,217,254,1) 20%, rgba(194,216,253,1) 21%, rgba(194,213,253,1) 26%, rgba(197,212,253,1) 27%, rgba(195,213,253,1) 27%, rgba(198,211,253,1) 28%, rgba(198,209,254,1) 31%, rgba(222,199,253,1) 43%, rgba(224,197,252,1) 47%, rgba(224,193,250,1) 48%, rgba(227,194,251,1) 50%, rgba(223,189,250,1) 54%, rgba(218,187,247,1) 55%, rgba(214,185,249,1) 57%, rgba(213,185,246,1) 57%, rgba(213,185,246,1) 57%, rgba(205,183,247,1) 59%, rgba(195,180,245,1) 62%, rgba(168,173,241,1) 67%, rgba(164,171,239,1) 67%, rgba(163,172,241,1) 68%, rgba(157,170,238,1) 69%, rgba(155,170,239,1) 69%, rgba(152,169,238,1) 70%, rgba(133,163,235,1) 74%, rgba(110,154,225,1) 79%, rgba(102,150,224,1) 82%, rgba(100,150,221,1) 82%, rgba(93,147,221,1) 84%, rgba(79,141,214,1) 87%, rgba(79,141,216,1) 88%, rgba(78,140,213,1) 88%, rgba(30,118,192,1) 100%);
+
+
+      /* FF3.6-15 */
+      /* Chrome10-25,Safari5.1-6 */
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cee6fe', endColorstr='#1e76c0',GradientType=0 ); /* IE6-9 */
+
+}
 .size-cm {
      display: none;
 }
 .table {
      margin-bottom: 0;
+     border-collapse: separate;
+     border-spacing: 5px 0;
+     text-align: center;
 }
 .table td, .table th {
      width: 25%;
      padding-left: 5%;
      padding-right: 5%;
-     /* text-align: center; */
 }
-.table tr:nth-child(2n+3) td {
 
+.table td {
+     color: #888888;
+     font-size: 17.5px;
+     font-family: Antonio-Regular, Arial, sans-serif;
+     padding: 5px 5%;
 }
+.table thead tr th {
+     font-size: 26px;
+     font-family: Antonio-Bold, Arial, sans-serif;
+     border: none;
+     position: relative;
+}
+.table thead tr th i {
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.table thead tr th:nth-child(1) i {
+     color: #b2ebf2;
+}
+.table thead tr th:nth-child(1) {
+     background-color: #b2ebf2;
+     color: #555555;
+}
+.table thead tr th:nth-child(2) i {
+     color: #fbecfc;
+}
+.table thead tr th:nth-child(2) {
+     background-color: #fbecfc;
+     color: #555555;
+}
+.table thead tr th:nth-child(3) i {
+     color: #d6c7fc;
+}
+.table thead tr th:nth-child(3) {
+     background-color: #d6c7fc;
+     color: #555555;
+}
+.table thead tr th:nth-child(4) i {
+     color: #f5f5f5;
+}
+.table thead tr th:nth-child(4) {
+     background-color: #f5f5f5;
+     color: #888888;
+}
+.table-striped tbody tr td {
+     background-color: rgba(245,245,245,0.5);
+}
+.table-striped tbody tr:nth-of-type(odd) td {
+     background-color: #ffffff;
+}
+
 #category-dropdown {
      display: none;
 }
 #category-dropdown.show {
      display: block;
 }
-.converter-outer {
-
-}
-.converter-outer > div[class^="col-"]{
-
-}
-.converter-inner {
-     margin: 0 -2px;
-}
-
-.converter-inner > div[class^="col-"]{
-     padding: 0 2px;
-}
-
 .hidden {
      display: none;
+}
+.row {
+     margin-left: -2px;
+     margin-right: -2px;
+}
+.row div[class^='col-'] {
+     padding-right: 2px;
+     padding-left: 2px;
+
+}
+select.error {
+     border-color: #dc3545;
+}
+#charts {
+     margin-top: 15px;
+}
+.length-unit {
+     border: none;
+     background-color: transparent;
+     color: #8a8a8a;
+}
+.size-in:after {
+     content: "''";
+}
+.size-cm:after {
+     content: "cm";
+}
+.chart-title {
+     color: #555;
+     font-size: 48px;
+     font-family: Antonio-Bold, Arial, sans-serif;
+     text-align: uppercase;
 }

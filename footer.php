@@ -7,6 +7,7 @@
 <script src="popper.min.js"></script>
 <script src="bootstrap.min.js"></script>
 -->
+<script src="js/dropkick.js" type="text/javascript"></script>
 <script src="js/myscript.js" type="text/javascript"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
