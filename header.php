@@ -27,9 +27,9 @@
      <link rel="stylesheet" href="css/mystyle.css">
 
      <!-- fontawesome -->
-     <link href="fontawesome-free-5.10.1-web/css/fontawesome.css" rel="stylesheet">
-     <link href="fontawesome-free-5.10.1-web/css/brands.css" rel="stylesheet">
-     <link href="fontawesome-free-5.10.1-web/css/solid.css" rel="stylesheet">
+     <link rel="stylesheet" href="css/fontawesome.min.css">
+     <link rel="stylesheet" href="css/brands.min.css">
+     <link rel="stylesheet" href="css/solid.min.css">
 
      <title>Shoe Size Converter</title>
 </head>

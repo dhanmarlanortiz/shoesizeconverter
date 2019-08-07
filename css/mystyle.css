@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap');
 @font-face {
   font-family: Antonio-Bold;
-  src: url(../fonts/Antonio-Bold.ttf);
+  src: url(../webfonts/Antonio-Bold.ttf);
   font-weight: bold;
 }
 @font-face {
   font-family: Antonio-Light;
-  src: url(../fonts/Antonio-Light.ttf);
+  src: url(../webfonts/Antonio-Light.ttf);
   font-weight: light;
 }
 @font-face {
   font-family: Antonio-Regular;
-  src: url(../fonts/Antonio-Regular.ttf);
+  src: url(../webfonts/Antonio-Regular.ttf);
   font-weight: regular;
 }
 
