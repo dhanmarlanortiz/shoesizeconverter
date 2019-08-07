@@ -17,7 +17,8 @@ $(document).ready(function() {
 
 	/* toggle cm/inch row */
 	$(".length-unit").on("change", function() {
-		var unit = $(".length-unit").val();
+		var unit = $(".length-unit .dk-selected").text();
+          console.log(unit);
 		if(unit == "cm") {
 			$(".size-in").hide(function() {
 				$(this).attr("selected", false);
@@ -42,8 +43,16 @@ $(document).ready(function() {
           resetConverter();
 	});
 
+     $(".category-list .list-group-item").on("click", function() {
+          var active_item = $(this).find('> span').text();
+          $(".chart-col .section-title > span").text("(" + active_item + ")");
+          resetConverter();
+     });
+
+
      $('#input-value').on('change', function() {
           $("#input-value").removeClass('error');
+          $("#input-value").siblings('.dk-select').removeClass('error');
      });
 
 	$('#input-unit').on('change', function() {
@@ -52,6 +61,7 @@ $(document).ready(function() {
 
           input_value.prop('disabled', false);
           $("#input-unit").removeClass('error');
+          $("#input-unit").siblings('.dk-select').removeClass('error');
 
           if(input_unit != null) {
                var size_options = "<option value='null' selected disabled>Size</option>";
@@ -62,9 +72,11 @@ $(document).ready(function() {
                     size_options += option;
      		});
                input_value.append(size_options);
+               resetValueField();
           } else {
                input_value.prop('disabled', true);
                input_value.find('option:first-child').prop('selected', true);
+               resetValueField();
           }
 	});
 
@@ -74,14 +86,18 @@ $(document).ready(function() {
 
           if(input_unit.val() == null) {
                input_unit.addClass('error');
+               input_unit.siblings('.dk-select').addClass('error');
           }else {
                input_unit.removeClass('error');
+               input_unit.siblings('.dk-select').removeClass('error');
           }
 
           if(input_value.val() == null) {
                input_value.addClass('error');
+               input_value.siblings('.dk-select').addClass('error');
           }else {
                input_value.removeClass('error');
+               input_value.siblings('.dk-select').removeClass('error');
           }
 
           if((input_unit.val() != null) && (input_value.val() != null )) {
@@ -105,9 +121,18 @@ $(document).ready(function() {
           $("#input-unit").find("option:first-child").prop("selected", true);
           $("#input-value").find("option:first-child").prop("selected", true);
           $("#input-value").prop("disabled", true);
+          resetValueField();
+     }
+
+     function resetValueField() {
+          var select = new Dropkick("#input-value");
+          select.refresh();
      }
 
      // $("#input-unit, #input-value").dropkick({
      //      mobile: true
      // });
+     $(".length-unit, #input-unit, #input-value").dropkick({
+          mobile: true
+     });
 });

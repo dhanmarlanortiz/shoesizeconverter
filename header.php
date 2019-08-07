@@ -34,4 +34,9 @@
      <title>Shoe Size Converter</title>
 </head>
 
-<body class="gradient-bg">
+<body class="gray-bg">
+     <nav class="navbar navbar-dark bg-dark">
+          <div class="container">
+               <a class="navbar-brand" href="http://ortizlab.com">Ortiz<span>Lab</span></a>
+          </div>
+     </nav>

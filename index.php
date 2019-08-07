@@ -3,104 +3,98 @@
 
           <div class="row">
                <div class="col-12">
-                    <!-- <h1 class="display-4">Shoe Size Charts and Converter</h1> -->
-                    <hr>
+                    <h1 class="page-title">Shoe Size Charts</h1>
                </div>
           </div>
 
-          <br>
-
           <div class="row">
-               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
-                    <div class="dropdown">
-                         <button class="btn btn-secondary dropdown-toggle" type="button" id="category-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Category: <span class="selected-category">Mens</span>
-                         </button>
-                         <div id="category-dropdown" class="nav dropdown-menu nav" role="tablist">
-                              <a class="dropdown-item active" id="mens-tab" data-toggle="tab" href="#mens-content" role="tab" aria-controls="mens" aria-selected="true">
-                                   <span>Mens</span>
-                              </a>
-                              <a class="dropdown-item" id="womens-tab" data-toggle="tab" href="#womens-content" role="tab" aria-controls="womens" aria-selected="false">
-                                   <span>Womens</span>
-                              </a>
-                              <a class="dropdown-item" id="kids-big-tab" data-toggle="tab" href="#kids-big-content" role="tab" aria-controls="kids-big" aria-selected="false">
-                                   <span>Big Kids</span>
-                                   <small>(7 – 12 Years)</small>
-                              </a>
-                              <a class="dropdown-item" id="kids-small-tab" data-toggle="tab" href="#kids-small-content" role="tab" aria-controls="kids-small" aria-selected="false">
-                                   <span>Small Kids</span>
-                                   <small>(4 – 7 Years)</small>
-                              </a>
-                              <a class="dropdown-item" id="toddlers-tab" data-toggle="tab" href="#toddlers-content" role="tab" aria-controls="toddlers" aria-selected="false">
-                                   <span>Toddlers</span>
-                                   <small>(9 Months – 4 Years)</small>
-                              </a>
-                              <a class="dropdown-item" id="infants-tab" data-toggle="tab" href="#infants-content" role="tab" aria-controls="infants" aria-selected="false">
-                                   <span>Infants</span>
-                                   <small>(0 – 9 Months)</small>
-                              </a>
+               <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                    <div class="section-title">
+                         Categories
+                    </div>
+                    <div class="list-group category-list">
+                         <a class="list-group-item active" id="mens-tab" data-toggle="tab" href="#mens-content" role="tab" aria-controls="mens" aria-selected="true">
+                              <span>Mens</span>
+                         </a>
+                         <a class="list-group-item" id="womens-tab" data-toggle="tab" href="#womens-content" role="tab" aria-controls="womens" aria-selected="false">
+                              <span>Womens</span>
+                         </a>
+                         <a class="list-group-item" id="kids-big-tab" data-toggle="tab" href="#kids-big-content" role="tab" aria-controls="kids-big" aria-selected="false">
+                              <span>Big Kids</span>
+                              <small>(7 – 12 Years)</small>
+                         </a>
+                         <a class="list-group-item" id="kids-small-tab" data-toggle="tab" href="#kids-small-content" role="tab" aria-controls="kids-small" aria-selected="false">
+                              <span>Small Kids</span>
+                              <small>(4 – 7 Years)</small>
+                         </a>
+                         <a class="list-group-item" id="toddlers-tab" data-toggle="tab" href="#toddlers-content" role="tab" aria-controls="toddlers" aria-selected="false">
+                              <span>Toddlers</span>
+                              <small>(9 Months – 4 Years)</small>
+                         </a>
+                         <a class="list-group-item" id="infants-tab" data-toggle="tab" href="#infants-content" role="tab" aria-controls="infants" aria-selected="false">
+                              <span>Infants</span>
+                              <small>(0 – 9 Months)</small>
+                         </a>
+                    </div>
+
+                    <!-- CONVERTER -->
+                    <div class="section-title">
+                         Size Converter
+                    </div>
+                    <div class="row converter">
+                         <div class="col-12">
+                              <h6 class="converter-header">
+                                   Input
+                              </h6>
+                         </div>
+                         <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-6">
+                              <select id="input-unit" name="" class="form-control">
+                                   <option value="null" selected disabled>Unit</option>
+                                   <option value="1">US</option>
+                                   <option value="2">EU</option>
+                                   <option value="3">UK</option>
+                              </select>
+                         </div>
+                         <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-6">
+                              <select id="input-value" name="" class="form-control" disabled>
+                                   <option value="null" selected disabled>Size</option>
+                              </select>
+                         </div>
+                         <div class="col-2 col-sm-2 col-md-12 col-lg-12 col-xl-12">
+                              <button id="convert" class="btn btn-block">
+                                   Go
+                              </button>
                          </div>
                     </div>
-                    <br>
+                    <div class="row results hidden">
+                         <div class="col-12">
+                              <h6 class="result-header">
+                                   Results
+                              </h6>
+                         </div>
+                         <div class="col-4">
+                              <div class="result-box">
+                                   <label for="result-us">US</label><span id="result-us">99</span>
+                              </div>
+                         </div>
+                         <div class="col-4">
+                              <div class="result-box">
+                                   <label for="result-eu">EU</label><span id="result-eu">99</span>
+                              </div>
+                         </div>
+                         <div class="col-4">
+                              <div class="result-box">
+                                   <label for="result-uk">UK</label><span id="result-uk">99</span>
+                              </div>
+                         </div>
+                    </div>
                </div>
-          </div>
-
-          <!-- CONVERTER -->
-          <div class="row converter">
-               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
-                    <h5>Converter</h5>
-               </div>
-               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
-                    <h6>Input: </h6>
-               </div>
-               <div class="col-5 col-sm-4 col-md-3 col-lg-2 offset-lg-3">
-                    <select id="input-unit" name="" class="form-control">
-                         <option value="null" selected disabled>Unit</option>
-                         <option value="1">US</option>
-                         <option value="2">EU</option>
-                         <option value="3">UK</option>
-                    </select>
-               </div>
-               <div class="col-5 col-sm-4 col-md-3 col-lg-2">
-                    <select id="input-value" name="" class="form-control" disabled>
-                         <option value="null" selected disabled>Size</option>
-                    </select>
-               </div>
-               <div class="col-2 col-sm-4 col-md-3 col-lg-2">
-                    <button id="convert" class="btn btn-primary btn-block">
-                         Go
-                    </button>
-               </div>
-          </div>
-          <div class="row results hidden">
-               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
-                    <br>
-                    <h6>Results: </h6>
-               </div>
-               <div class="col-5 col-sm-4 col-md-3 col-lg-2 offset-lg-3">
-                    <label for="result-us">US:</label>
-                    <span id="result-us"></span>
-               </div>
-               <div class="col-5 col-sm-4 col-md-3 col-lg-2">
-                    <label for="result-eu">EU:</label>
-                    <span id="result-eu"></span>
-               </div>
-               <div class="col-5 col-sm-4 col-md-3 col-lg-2">
-                    <label for="result-uk">UK:</label>
-                    <span id="result-uk"></span>
-               </div>
-          </div>
-
-          <br>
-
-          <!-- CHARTS -->
-          <div class="row">
-               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
-                    <h5 class="chart-title">CHART</h5>
-               </div>
-               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
+               <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 chart-col">
+                    <div class="section-title">
+                         Size Chart <span>(Mens)<span>
+                    </div>
                     <table class="table">
-                         <thead class="thead-dark">
+                         <thead>
                               <tr>
                                    <th scope="col">
                                         US <i class="fas fa-caret-down fa-lg"></i>
@@ -680,9 +674,40 @@
                </div>
           </div>
 
-          <br>
-          <hr>
-
+          <!-- <div class="row hidden">
+               <div class="col-12 col-sm-12 col-lg-6 offset-lg-3">
+                    <div class="dropdown">
+                         <button class="btn btn-secondary dropdown-toggle" type="button" id="category-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Chart Category: <span class="selected-category">Mens</span>
+                         </button>
+                         <div id="category-dropdown" class="nav dropdown-menu nav" role="tablist">
+                              <a class="dropdown-item active" id="mens-tab" data-toggle="tab" href="#mens-content" role="tab" aria-controls="mens" aria-selected="true">
+                                   <span>Mens</span>
+                              </a>
+                              <a class="dropdown-item" id="womens-tab" data-toggle="tab" href="#womens-content" role="tab" aria-controls="womens" aria-selected="false">
+                                   <span>Womens</span>
+                              </a>
+                              <a class="dropdown-item" id="kids-big-tab" data-toggle="tab" href="#kids-big-content" role="tab" aria-controls="kids-big" aria-selected="false">
+                                   <span>Big Kids</span>
+                                   <small>(7 – 12 Years)</small>
+                              </a>
+                              <a class="dropdown-item" id="kids-small-tab" data-toggle="tab" href="#kids-small-content" role="tab" aria-controls="kids-small" aria-selected="false">
+                                   <span>Small Kids</span>
+                                   <small>(4 – 7 Years)</small>
+                              </a>
+                              <a class="dropdown-item" id="toddlers-tab" data-toggle="tab" href="#toddlers-content" role="tab" aria-controls="toddlers" aria-selected="false">
+                                   <span>Toddlers</span>
+                                   <small>(9 Months – 4 Years)</small>
+                              </a>
+                              <a class="dropdown-item" id="infants-tab" data-toggle="tab" href="#infants-content" role="tab" aria-controls="infants" aria-selected="false">
+                                   <span>Infants</span>
+                                   <small>(0 – 9 Months)</small>
+                              </a>
+                         </div>
+                    </div>
+                    <br>
+               </div>
+          </div> -->
      </div>
 
-     <?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
