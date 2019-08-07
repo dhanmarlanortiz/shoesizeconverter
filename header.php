@@ -15,6 +15,7 @@
      <meta property="og:description" content="Shoe size chart and converter for men, women, little kids, big kids, and infants." />
      <meta property="og:url" content="http://ortizlab.com/shoesizeconverter" />
      <meta property="og:site_name" content="Shoe size chart and converter" />
+     <meta property="og:image" content="https://b.imge.to/2019/08/07/AIoBh.jpg" />
 
      <meta name="google-site-verification" content="kGt7WyauqGWd4OJc7g8LKYa5JA73EAEhNkkJ1soc6eg" />
 
